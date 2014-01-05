@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Site Map/Page Not Found: Combined</title>
+
+<style type="text/css">
+<!--
+a, a:active, a:visited {
+  color: #006666;
+  text-decoration: none
+}
+a:hover {
+    color:#00CC99;
+    text-decoration: underline;
+}
+BODY, P, H1, H2, H3, H4, H5, H6, LI, TD, DD, DT {
+  font-family: Verdana, AvantGarde, Tahoma, Arial, sans-serif;
+  font-size: 10pt;
+  color: black;
+  padding: 0px;
+  margin: 20px;
+}
+H1, H2, H3, H4 {
+  font-weight: bold
+}
+h1 {
+  font-size: 20px;
+}
+h2 {
+  font-size: 16px;
+}
+code {
+  padding-left: 25px;
+}
+ol li, ul li {
+  margin: 5px 0;
+}
+.corefile, .impt { color: red; }
+img {
+  margin-left: 20px;
+}
+-->
+</style>
+</head>
+
+<body>
+<a name="top" id="top"></a>
+<h1>Site Map/Page Not Found (Combined) for Zen Cart v1.5.0/v1.5.1/v1.5.2</h1>
+<h3>Version 1.1.0 by lat9</h3>
+<p>Current Support Thread at Zen Cart Forums: <a href="http://www.zen-cart.com/showthread.php?204371-Site-Map-Page-Not-Found-Combined-Support-Thread" target="_blank">http://www.zen-cart.com/showthread.php?204371-Site-Map-Page-Not-Found-Combined-Support-Thread</a></p>
+<h2>Version History:</h2>
+<ul>
+  <li>v1.0.0, 2013-01-02, Initial release.</li>
+  <li>v1.1.0, 2013-11-29, Updated for v1.5.2 &mdash; the <em>contact_us</em> page link converted to SSL.</li>
+</ul>
+
+<h2>What it does</h2>
+<p>In an as-distributed Zen Cart installation, the information displayed in the site_map and page_not_found pages is <em>very</em> similar. 99.999% of the time I want to make a small tweak in what's displayed (e.g. adding or removing a page link) and wind up making the same modification to two files.</p>
+<p>This plugin consolidates the information displayed by those two pages into a single module, so that any site-specific changes get made in one place. The plugin creates an HTML div named siteMapList or pageNotFoundList, respectively, that contains the list of products and page links for your store. For both pages, that div is created with a class named mapList so that you can easily define some common styling for the two pages.</p>
+<p><strong>Note:</strong> The page-related links are displayed using the logic present in the v1.5.2 version of tpl_site_map_default.php.</p>
+
+<h2>Installation</h2>
+<p>There are <em>no</em> core-file overwrites in this plugin; you should <strong>always</strong> backup your cart&rsquo;s database and files prior to making any changes.  Unzip the plugin's package file, rename the YOUR_TEMPLATE folder to match your custom template's name and then copy the contents of the /includes folder to your store's installation:</p>
+<ol>
+  <li>/includes/templates/YOUR_TEMPLATE/templates/tpl_modules_map_list.php</li>
+  <li>/includes/templates/YOUR_TEMPLATE/templates/tpl_page_not_found_default.php</li>
+  <li>/includes/templates/YOUR_TEMPLATE/templates/tpl_site_map_default.php</li>
+</ol>
+
+<h2>Uninstall</h2>
+<p>Delete the files that were copied for this plugin's installation.</p>
+
+</body>
+</html>
