@@ -47,8 +47,11 @@ $div_id = ($_GET['main_page'] == FILENAME_SITE_MAP) ? 'siteMapList' : 'pageNotFo
 <?php if (DEFINE_CONTACT_US_STATUS <= '1') { ?>
           <li><?php echo '<a href="' . zen_href_link(FILENAME_CONTACT_US, '', 'SSL') . '">' . BOX_INFORMATION_CONTACT . '</a>'; ?></li>
 <?php } ?>
-<?php if ( (isset($phpBB->phpBB['db_installed_config']) && $phpBB->phpBB['db_installed_config']) && (isset($phpBB->phpBB['files_installed']) && $phpBB->phpBB['files_installed'])  && (PHPBB_LINKS_ENABLED=='true')) { ?>
+<?php if ( isset ($phpBB) && is_object ($phpBB) && (isset($phpBB->phpBB['db_installed_config']) && $phpBB->phpBB['db_installed_config']) && (isset($phpBB->phpBB['files_installed']) && $phpBB->phpBB['files_installed'])  && (PHPBB_LINKS_ENABLED=='true')) { ?>
           <li><?php echo '<a href="' . zen_href_link($phpBB->phpBB['phpbb_url'] . FILENAME_BB_INDEX, '', 'NONSSL', false, '', true) . '" target="_blank">' . BOX_BBINDEX . '</a>'; ?></li>
+<?php } ?>
+<?php if (isset ($external_bb_url) && isset ($external_bb_text) && !empty($external_bb_url) && !empty($external_bb_text)) { ?>
+            <li><?php echo '<a href="' . $external_bb_url . '" target="_blank">' . $external_bb_text . '</a>'; ?></li>
 <?php } ?>
 <?php if (MODULE_ORDER_TOTAL_GV_STATUS == 'true') { ?>
           <li><?php echo '<a href="' . zen_href_link(FILENAME_GV_FAQ) . '">' . BOX_INFORMATION_GV . '</a>'; ?></li>
